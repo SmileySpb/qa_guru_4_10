@@ -33,6 +33,10 @@ test {
     useJUnitPlatform()
 }
 
+tasks.withType(Test) {
+    systemProperties += System.properties
+}
+
 task localPropertiesTest(type: Test) {
     useJUnitPlatform {
         includeTags 'local'
